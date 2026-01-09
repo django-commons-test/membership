@@ -1,13 +1,13 @@
 name: New member
 description: Become a Django Commons member with the following form.
 labels: ["New member"]
-title: "✋ [MEMBER] - <your handle>"
+title: "✋ [MEMBER] - your_username_here"
 assignees: 'django-commons/admins'
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for expressing interest in joining Django Commons!
+        Thanks for expressing interest in joining Django Commons! If approved, you'll receive an email invitation to join. When you receive that email you'll have 7 days to accept.
   - type: textarea
     id: why-join
     attributes:
@@ -16,12 +16,13 @@ body:
       placeholder: Keep it to 2-4 sentences.
     validations:
       required: true
-  - type: textarea
-    id: which-projects
+  - type: checkboxes
+    id: general
     attributes:
-      label: Which project(s) are you looking to contribute to?
-    validations:
-      required: false
+      label: General questions
+      options:
+        - label: Do you wish to join the designers team?
+          required: false
   - type: checkboxes
     id: terms
     attributes:
