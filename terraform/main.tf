@@ -14,7 +14,7 @@ terraform {
 # https://registry.terraform.io/providers/integrations/github/latest/docs
 
 provider "github" {
-  owner = "django-commons"
+  owner = "django-commons-test"
   token = var.github_token
 }
 

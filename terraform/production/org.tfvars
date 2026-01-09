@@ -17,7 +17,7 @@ super_admins = [
 
 # Design members
 designers = [
-
+  "cunla",
 ]
 
 # Organization members
