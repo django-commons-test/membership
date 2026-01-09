@@ -2,7 +2,12 @@
 # https://www.terraform.io/language/values/variables
 
 variable "admins" {
-  description = "A set of admins to add to the organization"
+  description = "A set of users who are admins to add to the organization"
+  type        = set(string)
+}
+
+variable "super_admins" {
+  description = "A set of users who have operational permissions to add to the organization"
   type        = set(string)
 }
 
@@ -14,6 +19,12 @@ variable "github_token" {
 
 variable "members" {
   description = "A set of members to add to the organization"
+  type        = set(string)
+  default     = []
+}
+
+variable "designers" {
+  description = "A set of designers to add to the organization"
   type        = set(string)
   default     = []
 }
@@ -81,13 +92,5 @@ variable "organization_teams" {
     permission                = optional(string, null)
     privacy                   = optional(string, "closed")
     review_request_delegation = optional(bool, false)
-  }))
-}
-
-variable "organization_secrets" {
-  description = "Map of secrets to add to the organization"
-  type = map(object({
-    description = string
-    visibility  = string
   }))
 }
