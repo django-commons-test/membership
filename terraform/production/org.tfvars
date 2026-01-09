@@ -6,6 +6,20 @@ admins = [
   "tim-schilling",
   "williln",
 ]
+
+super_admins = [
+  "cunla",
+  "ryancheley",
+  "Stormheg",
+  "tim-schilling",
+  "williln",
+]
+
+# Design members
+designers = [
+
+]
+
 # Organization members
 members = [
   "amirreza8002",
@@ -48,8 +62,11 @@ members = [
 ]
 
 organization_teams = {
+  # This team should be enabled as moderators which can't be configured
+  # via the GitHub Terraform integration.
+  # https://github.com/organizations/django-commons/settings/moderators
   "Admins" = {
-    description = "django-commons administrators"
+    description = "Django Commons administrators. This team is responsible for the overall management of the organization."
     # Use maintainers for organizational teams
     maintainers = [
       "cunla",
@@ -59,22 +76,15 @@ organization_teams = {
       "williln",
     ]
   }
-  "security-team" = {
-    description = "django-commons security team"
+  "super-admins" = {
+    description = "Django Commons super administrators. This team is responsible for performing privileged operations."
     # Use maintainers for organizational teams
     maintainers = [
-      "matthiask",
+      "cunla",
+      "ryancheley",
+      "Stormheg",
       "tim-schilling",
+      "williln",
     ]
-    permission = "push"
   }
-}
-
-################ GitHub Organization Secrets, not used at the moment #############
-
-organization_secrets = {
-  #     "GPG_PASSPHRASE" = {
-  #       description = "GPG Passphrase used to encrypt plan.out files"
-  #       visibility  = "all"
-  #     }
 }
