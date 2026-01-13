@@ -2,7 +2,7 @@ name: Transfer project in
 description: Transfer a project into Django commons with the following form.
 labels: ["Transfer project in"]
 title: "🛬 [INBOUND] - <project>"
-assignees: 'django-commons/admins'
+assignees: 'django-commons-test/admins'
 body:
   - type: markdown
     attributes:

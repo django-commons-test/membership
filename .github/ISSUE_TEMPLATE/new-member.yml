@@ -2,7 +2,7 @@ name: New member
 description: Become a Django Commons member with the following form.
 labels: ["New member"]
 title: "✋ [MEMBER] - your_username_here"
-assignees: 'django-commons/admins'
+assignees: 'django-commons-test/admins'
 body:
   - type: markdown
     attributes:

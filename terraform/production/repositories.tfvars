@@ -12,7 +12,7 @@ repositories = {
   }
 
   "membership" = {
-    description            = "Membership repository for the django-commons organization."
+    description            = "Membership repository for the django-commons-test organization."
     visibility             = "public"
     allow_merge_commit     = true
     allow_rebase_merge     = true
