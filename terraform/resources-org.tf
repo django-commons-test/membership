@@ -1,7 +1,7 @@
 # GitHub Membership Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership
 data "github_users" "users" {
-  usernames = setunion(var.admins, var.super_admins, var.members)
+  usernames = setunion(var.admins, var.super_admins, var.members, var.designers)
 }
 
 output "invalid_users" {
