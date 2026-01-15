@@ -10,7 +10,6 @@ repositories = {
     push_allowances        = []
     is_django_commons_repo = true
   }
-
   "membership" = {
     description            = "Membership repository for the django-commons-test organization."
     visibility             = "public"
