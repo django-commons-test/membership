@@ -14,6 +14,7 @@ super_admins = [
   "tim-schilling",
   "williln",
 ]
+
 # Design members
 designers = [
   "cunla",
