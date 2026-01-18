@@ -7,6 +7,8 @@ on:
     paths:
       - 'terraform/production/*.tfvars'
       - 'terraform/*.tf'
+      - '.github/workflows/apply.yml'
+      - '.github/workflows/plan.yml'
 
 concurrency:
   group: terraform-actions
@@ -17,19 +19,22 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: read
+      pull-requests: write
+
+    timeout-minutes: 10
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v6.0.1
+        with:
+          persist-credentials: false
       - name: terraform apply
         # v1.44.0
-        # Use the commit hash for security hardening
-        # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions
-        uses: dflook/terraform-apply@7d435d4d115a11e5db1e710ac969f5382f0f6f9f
+        uses: dflook/terraform-apply@8f47d0ad9f3cb9e50fd6b3595c0cb98f00c518df
         env:
-          TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
         with:
           path: "terraform"
           variables: |
@@ -40,9 +45,10 @@ jobs:
 
       - name: Commit changes
         if: ${{ always() }}
-        uses: devops-infra/action-commit-push@v0.9.2
+        # v0.10.0
+        uses: devops-infra/action-commit-push@8a2d9d73c3f506468129be2e4409e60dbed70357
         with:
-          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          github_token: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
           commit_prefix: "[AUTO]"
           commit_message: "State changes after apply"
           force: false

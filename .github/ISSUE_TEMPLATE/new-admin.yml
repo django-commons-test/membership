@@ -2,7 +2,7 @@ name: New admin
 description: Apply to be a Django Commons administrator with the following form.
 labels: ["New admin"]
 title: "🏗️ [ADMIN] - <your handle>"
-assignees: 'django-commons/admins'
+assignees: 'django-commons-test/admins'
 body:
   - type: markdown
     attributes:

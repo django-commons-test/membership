@@ -1,7 +1,7 @@
 # GitHub Membership Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership
 data "github_users" "users" {
-  usernames = setunion(var.admins, var.members)
+  usernames = setunion(var.admins, var.super_admins, var.members, var.designers)
 }
 
 output "invalid_users" {
@@ -11,6 +11,7 @@ output "invalid_users" {
 locals {
   users = merge(
     { for user in var.admins : user => "admin" if contains(data.github_users.users.logins, user) },
+    { for user in var.super_admins : user => "admin" if contains(data.github_users.users.logins, user) },
     { for user in var.members : user => "member" if contains(data.github_users.users.logins, user) }
   )
 }
@@ -23,11 +24,15 @@ resource "github_membership" "this" {
 }
 
 # Github Organization Security Manager Resource
-# https://registry.terraform.io/providers/integrations/github/latest/docs/resources/organization_security_manager
+# https://registry.terraform.io/providers/integrations/github/latest/docs/resources/organization_role_team
 
-resource "github_organization_security_manager" "this" {
-  team_slug = github_team.org_teams["security-team"].slug
+resource "github_organization_role_team" "admins_security_manager" {
+  # Can be confirmed by inspecting the input for the Security Manager role at:
+  # https://github.com/organizations/django-commons-test/settings/org_role_assignments/new
+  role_id   = 138
+  team_slug = github_team.org_teams["Admins"].slug
 }
+
 # Create the organization teams for Django Commons.
 resource "github_team" "org_teams" {
   for_each = var.organization_teams

@@ -5,7 +5,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "6.3.1"
+      version = "6.9.0"
     }
   }
 }
@@ -14,7 +14,7 @@ terraform {
 # https://registry.terraform.io/providers/integrations/github/latest/docs
 
 provider "github" {
-  owner = "django-commons"
+  owner = "django-commons-test"
   token = var.github_token
 }
 
