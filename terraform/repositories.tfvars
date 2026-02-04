@@ -1,6 +1,5 @@
 # Organization repositories
 repositories = {
-
   "controls" = {
     description            = "The controls for managing Django Commons projects"
     allow_merge_commit     = true
@@ -20,5 +19,4 @@ repositories = {
     push_allowances        = []
     is_django_commons_repo = true
   }
-
 }
