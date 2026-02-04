@@ -17,7 +17,7 @@
       "mode": "data",
       "type": "github_users",
       "name": "users",
-      "provider": "provider[\"registry.terraform.io/integrations/github",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -61,7 +61,7 @@
       "mode": "managed",
       "type": "github_membership",
       "name": "this",
-      "provider": "provider[\"registry.terraform.io/integrations/github",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
       "instances": [
         {
           "index_key": "Stormheg",
@@ -149,7 +149,7 @@
       "mode": "managed",
       "type": "github_organization_role_team",
       "name": "admins_security_manager",
-      "provider": "provider[\"registry.terraform.io/integrations/github",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -170,7 +170,7 @@
       "mode": "managed",
       "type": "github_team",
       "name": "org_designers_team",
-      "provider": "provider[\"registry.terraform.io/integrations/github",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -198,7 +198,7 @@
       "mode": "managed",
       "type": "github_team",
       "name": "org_teams",
-      "provider": "provider[\"registry.terraform.io/integrations/github",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
       "instances": [
         {
           "index_key": "Admins",
@@ -248,7 +248,7 @@
       "mode": "managed",
       "type": "github_team_members",
       "name": "org_designers_team_members",
-      "provider": "provider[\"registry.terraform.io/integrations/github",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -274,7 +274,7 @@
       "mode": "managed",
       "type": "github_team_members",
       "name": "org_team_members",
-      "provider": "provider[\"registry.terraform.io/integrations/github",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
       "instances": [
         {
           "index_key": "Admins",
