@@ -1,7 +1,7 @@
 # GitHub Membership Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership
 data "github_users" "users" {
-  usernames = setunion(var.admins, var.super_admins, var.members, var.designers)
+  usernames = setunion(var.admins, var.super_admins, var.members)
 }
 
 output "invalid_users" {
@@ -10,9 +10,9 @@ output "invalid_users" {
 
 locals {
   users = merge(
+    { for user in var.members : user => "member" if contains(data.github_users.users.logins, user) },
     { for user in var.admins : user => "admin" if contains(data.github_users.users.logins, user) },
-    { for user in var.super_admins : user => "admin" if contains(data.github_users.users.logins, user) },
-    { for user in var.members : user => "member" if contains(data.github_users.users.logins, user) }
+    { for user in var.super_admins : user => "admin" if contains(data.github_users.users.logins, user) }
   )
 }
 
@@ -28,7 +28,7 @@ resource "github_membership" "this" {
 
 resource "github_organization_role_team" "admins_security_manager" {
   # Can be confirmed by inspecting the input for the Security Manager role at:
-  # https://github.com/organizations/django-commons-test/settings/org_role_assignments/new
+  # https://github.com/organizations/django-commons/settings/org_role_assignments/new
   role_id   = 138
   team_slug = github_team.org_teams["Admins"].slug
 }
