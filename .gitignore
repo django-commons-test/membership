@@ -1,0 +1,8 @@
+*.backup
+notes.txt
+.terraform
+.idea
+.dflook-terraform-github-actions/**
+tags
+**/.terraform.lock.hcl
+**/*.backup
