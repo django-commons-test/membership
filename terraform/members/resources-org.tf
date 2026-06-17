@@ -11,8 +11,8 @@ output "invalid_users" {
 locals {
   users = merge(
     { for user in var.members : user => "member" if contains(data.github_users.users.logins, user) },
-    { for user in var.admins : user => "admin" if contains(data.github_users.users.logins, user) },
-    { for user in var.super_admins : user => "admin" if contains(data.github_users.users.logins, user) }
+    { for user in var.admins : user => "member" if contains(data.github_users.users.logins, user) },
+    { for user in var.super_admins : user => "admin" if contains(data.github_users.users.logins, user) },
   )
 }
 

@@ -2,7 +2,7 @@
 notes.txt
 .terraform
 .idea
-.dflook-terraform-github-actions/**
+.dflook-terraform-github-actions
 tags
-**/.terraform.lock.hcl
-**/*.backup
+django-commons.org/.cache/
+django-commons.org/site/

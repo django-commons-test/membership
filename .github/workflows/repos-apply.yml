@@ -10,6 +10,8 @@ on:
       - '.github/workflows/repos-apply.yml'
       - '.github/workflows/repos-plan.yml'
 
+permissions: {}
+
 concurrency:
   group: terraform-actions-repos
 
@@ -17,18 +19,19 @@ jobs:
   repos-apply-changes:
     name: "Apply org-repositories changes"
     runs-on: ubuntu-latest
+    environment: production
 
     permissions:
       contents: read
-      pull-requests: write
+      pull-requests: write  # Required to post terraform plan comments
     timeout-minutes: 10
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6.0.1  # zizmor: ignore[unpinned-uses]
+        uses: actions/checkout@v6  # zizmor: ignore[unpinned-uses]
         with:
           persist-credentials: false
       - name: terraform apply
-        uses: dflook/terraform-apply@8f47d0ad9f3cb9e50fd6b3595c0cb98f00c518df # v2.2.2
+        uses: dflook/terraform-apply@5489b988934a50bf1489d5b7c5253b46520a7dca # v2.2.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
@@ -43,7 +46,7 @@ jobs:
 
       - name: Commit changes
         if: ${{ always() }}
-        uses: devops-infra/action-commit-push@8a2d9d73c3f506468129be2e4409e60dbed70357 # v1.0.3
+        uses: devops-infra/action-commit-push@0b42c7c1bf502dc2d7c9e8b9d9d7c174a48fe7c1 # v1.3.3
         with:
           github_token: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
           commit_prefix: "[AUTO]"

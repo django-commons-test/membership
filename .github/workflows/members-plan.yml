@@ -9,6 +9,8 @@ on:
       - '.github/workflows/members-apply.yml'
       # Do not trigger the plan action when it's been changed since this action has write permissions
 
+permissions: {}
+
 concurrency:
   group: terraform-actions-members
 
@@ -18,16 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write
+      pull-requests: write  # Required to post terraform fmt check comments
     timeout-minutes: 4
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6.0.1  # zizmor: ignore[unpinned-uses]
+        uses: actions/checkout@v6  # zizmor: ignore[unpinned-uses]
         with:
           persist-credentials: false
 
       - name: terraform fmt check
-        uses: dflook/terraform-fmt-check@10eaa13fa61437aa51be2d12fafe95f152e3512d  # v2.2.2
+        uses: dflook/terraform-fmt-check@59168426e242f665bf7b70644d706224e665056a  # v2.2.3
         with:
           path: "terraform/members"
 
@@ -35,18 +37,19 @@ jobs:
     name: "Plan org membership changes and list them in a PR"
     runs-on: ubuntu-latest
     needs: ["format-terraform-code"]
+    environment: production
     permissions:
-      pull-requests: write
+      pull-requests: write  # Required to post terraform plan comments
       contents: read
     timeout-minutes: 10
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6.0.1  # zizmor: ignore[unpinned-uses]
+        uses: actions/checkout@v6  # zizmor: ignore[unpinned-uses]
         with:
           persist-credentials: false
 
       - name: terraform plan
-        uses: dflook/terraform-plan@dc251c444763eed5defd065b866874b6343017ca  # v2.2.2
+        uses: dflook/terraform-plan@7878bff63e2099cdc9be9a6f33cbbbf687f8f0fe  # v2.2.3
         env:
           TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

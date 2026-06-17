@@ -28,7 +28,7 @@ resource "github_repository" "this" {
   has_downloads               = each.value.has_downloads
   has_discussions             = each.value.has_discussions
   has_issues                  = true
-  has_projects                = true
+  has_projects                = each.value.has_projects
   has_wiki                    = each.value.has_wiki
   is_template                 = each.value.is_template
   name                        = each.key
@@ -47,8 +47,6 @@ resource "github_repository" "this" {
       }
       build_type = pages.value.build_type
       cname      = pages.value.cname
-      html_url   = pages.value.html_url
-      url        = pages.value.url
     }
   }
 
