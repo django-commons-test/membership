@@ -1,7 +1,7 @@
 {
   "version": 4,
-  "terraform_version": "1.15.6",
-  "serial": 563,
+  "terraform_version": "1.12.3",
+  "serial": 564,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -9,7 +9,7 @@
       "mode": "data",
       "type": "github_team",
       "name": "admins_team",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -37,8 +37,7 @@
             "slug": "Admins",
             "summary_only": false
           },
-          "sensitive_attributes": [],
-          "identity_schema_version": 0
+          "sensitive_attributes": []
         }
       ]
     },
@@ -46,7 +45,7 @@
       "mode": "managed",
       "type": "github_repository",
       "name": "this",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "index_key": "controls",
@@ -119,7 +118,6 @@
             "web_commit_signoff_required": false
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
         },
         {
@@ -193,7 +191,6 @@
             "web_commit_signoff_required": false
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
         }
       ]
@@ -201,3 +198,4 @@
   ],
   "check_results": null
 }
+
