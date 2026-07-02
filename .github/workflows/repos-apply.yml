@@ -27,9 +27,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6  # zizmor: ignore[unpinned-uses]
+        uses: actions/checkout@v7  # zizmor: ignore[unpinned-uses]
         with:
-          persist-credentials: false
+          # This is the default, but it's required since we are performing git operations later on.
+          persist-credentials: true  # zizmor: ignore[artipacked]
       - name: tofu apply
         uses: dflook/tofu-apply@c254eb5b2e48978c05587373100d26b604c2182d # v2.2.3
         env:

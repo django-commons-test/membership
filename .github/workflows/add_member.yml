@@ -31,8 +31,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6.0.1
         with:
-          # This is the default, but it's required since we are performing
-          # Git operations later on.
+          # This is the default, but it's required since we are performing git operations later on.
           persist-credentials: true
 
       - name: Get username to add
