@@ -1,7 +1,7 @@
 {
   "version": 4,
-  "terraform_version": "1.14.8",
-  "serial": 559,
+  "terraform_version": "1.12.3",
+  "serial": 560,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {
     "invalid_users": {
@@ -17,14 +17,14 @@
       "mode": "data",
       "type": "github_users",
       "name": "users",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
             "emails": [
               "",
-              "",
+              "storm@stormbase.digital",
               "mathildaudufo@gmail.com",
               "bckohan@gmail.com",
               "",
@@ -65,8 +65,7 @@
               "williln"
             ]
           },
-          "sensitive_attributes": [],
-          "identity_schema_version": 0
+          "sensitive_attributes": []
         }
       ]
     },
@@ -74,20 +73,19 @@
       "mode": "managed",
       "type": "github_membership",
       "name": "this",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "index_key": "Daksh777",
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"13c5537ccbb8a7c21a1b77d1335a6979f8b01e9210881f0a42e5518e2a40242e\"",
+            "etag": "W/\"e0285c17d05ef814d7028f0679055cec6a2b137727db2644df94dfa96e6330dc\"",
             "id": "django-commons-test:Daksh777",
-            "role": "admin",
+            "role": "member",
             "username": "Daksh777"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -98,13 +96,12 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"665e5ca6ebdbd15c0662186e89d69655b35088ad7a001ac7e490f4d341a1820d\"",
+            "etag": "W/\"35541e3a48febc29f136c36ae2170729d24c7737a377444352d16c875067cfbc\"",
             "id": "django-commons-test:Stormheg",
             "role": "admin",
             "username": "Stormheg"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -115,13 +112,12 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"662d4838ba0f1db9497c4b8f62d1937ad3d56eb9f53c7c8c6e9e032d17e75106\"",
+            "etag": "W/\"f9c0cd36ef265775fd99f5267da626585652f28ff3f0ae3eed643ba7467d074f\"",
             "id": "django-commons-test:TildaDares",
-            "role": "admin",
+            "role": "member",
             "username": "TildaDares"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -132,13 +128,12 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"e815ad9ec0224bd6ec00d484591eb68d0378962e051ea1470a36bc2b55408dea\"",
+            "etag": "W/\"6f6fa3d74c6567792252ce8205edd71a3ac43ad65b1a135b0c4e316cde8344c3\"",
             "id": "django-commons-test:bckohan",
-            "role": "admin",
+            "role": "member",
             "username": "bckohan"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -149,13 +144,12 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"808cf462d408f6984c5ed8617870c028a91f3cb79b47c553fc99396b01ffd795\"",
+            "etag": "W/\"27b9dfa0568d85a309411cc750f8abbfa812ee2188cb6e6a9bcc042f28a5b14d\"",
             "id": "django-commons-test:cunla",
             "role": "admin",
             "username": "cunla"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -166,13 +160,12 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"4ac3cb673deafdde358d0d9db8c58e7b1f4d158ccf4ccfeee36fcbc8c233526f\"",
+            "etag": "W/\"6231321df36287f42a8db941f4d7b5e8919c8d5ba69c0a0123537e7c48e48074\"",
             "id": "django-commons-test:ryancheley",
             "role": "admin",
             "username": "ryancheley"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -183,13 +176,12 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"8705a5ac16714d861ff20477e8a310d9375d3c0efc809c943fb70cb439b6fef7\"",
+            "etag": "W/\"c93bddf1b00d7c42c174c79b26cf1feed1ca28bad8d86ed1a88886b04953a44c\"",
             "id": "django-commons-test:tim-schilling",
             "role": "admin",
             "username": "tim-schilling"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -200,13 +192,12 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"0e6bc63b6ea3adecacb1be9638c15eba6e2c2a513f3f9097ce39fe9a03ffba57\"",
+            "etag": "W/\"24c845ef604f65c19667a6039c46e97fc5a8763803f059d30630717b89df92cf\"",
             "id": "django-commons-test:williln",
             "role": "admin",
             "username": "williln"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "data.github_users.users"
@@ -218,7 +209,7 @@
       "mode": "managed",
       "type": "github_organization_role_team",
       "name": "admins_security_manager",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -228,7 +219,6 @@
             "team_slug": "admins"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "github_team.org_teams"
@@ -240,14 +230,14 @@
       "mode": "managed",
       "type": "github_team",
       "name": "org_designers_team",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
             "create_default_maintainer": false,
             "description": "Django Commons designers",
-            "etag": "W/\"095a3fc540879fa69c2f964a5f8d682e185397bd42fb902d34f76ee0fd9fafe2\"",
+            "etag": "W/\"0cb1f93c31009d58b796bcdb3eaf9a11d16486561ff445a877f2aa3c6194b0b8\"",
             "id": "15864173",
             "ldap_dn": "",
             "members_count": 1,
@@ -260,7 +250,6 @@
             "slug": "designers"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA=="
         }
       ]
@@ -269,7 +258,7 @@
       "mode": "managed",
       "type": "github_team",
       "name": "org_teams",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "index_key": "Admins",
@@ -277,10 +266,10 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Django Commons administrators. This team is responsible for the overall management of the organization.",
-            "etag": "W/\"e7c7b455c02cc27477f19d0380f88b6e50ada741e30bfe2ce4481c757a9ea548\"",
+            "etag": "W/\"cefc9e89deb2191cb32170816d0d674ef680071dcc526747a6f7d548c5593c40\"",
             "id": "15864172",
             "ldap_dn": "",
-            "members_count": 5,
+            "members_count": 8,
             "name": "Admins",
             "node_id": "T_kwDOC2LxVc4A8hFs",
             "parent_team_id": "",
@@ -290,7 +279,6 @@
             "slug": "admins"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA=="
         },
         {
@@ -299,7 +287,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Django Commons super administrators. This team is responsible for performing privileged operations.",
-            "etag": "W/\"5c8a94cfd36f74378ac8e7616a3316d180a6a2508db200219a4e5d5b17b6063f\"",
+            "etag": "W/\"7016197310b70f2e3642ef93e2c8211b3d4877df4c2ded7338faaec09ecd5867\"",
             "id": "15864174",
             "ldap_dn": "",
             "members_count": 5,
@@ -312,7 +300,6 @@
             "slug": "super-admins"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA=="
         }
       ]
@@ -321,7 +308,7 @@
       "mode": "managed",
       "type": "github_team_members",
       "name": "org_designers_team_members",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -336,7 +323,6 @@
             "team_id": "15864173"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "github_team.org_designers_team"
@@ -348,7 +334,7 @@
       "mode": "managed",
       "type": "github_team_members",
       "name": "org_team_members",
-      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "provider": "provider[\"registry.opentofu.org/integrations/github\"]",
       "instances": [
         {
           "index_key": "Admins",
@@ -392,7 +378,6 @@
             "team_id": "15864172"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "github_team.org_teams"
@@ -428,7 +413,6 @@
             "team_id": "15864174"
           },
           "sensitive_attributes": [],
-          "identity_schema_version": 0,
           "private": "bnVsbA==",
           "dependencies": [
             "github_team.org_teams"
@@ -439,3 +423,4 @@
   ],
   "check_results": null
 }
+
