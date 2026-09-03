@@ -7,7 +7,6 @@ admins = [
   "Stormheg",
   "TildaDares",
   "tim-schilling",
-  "williln",
 ]
 
 super_admins = [
@@ -15,7 +14,6 @@ super_admins = [
   "ryancheley",
   "Stormheg",
   "tim-schilling",
-  "williln",
 ]
 
 # Design members
