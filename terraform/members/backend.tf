@@ -3,7 +3,7 @@ terraform {
     bucket         = "django-commons-tofu-state"
     key            = "test/members/tfstate.json"
     region         = "us-east-1"
-    dynamodb_table = "django-commons-terraform-state-lock"
+    dynamodb_table = "django-commons-tofu-state-lock"
     encrypt        = true
   }
 }
