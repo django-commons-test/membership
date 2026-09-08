@@ -45,12 +45,12 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6  # zizmor: ignore[unpinned-uses]
+        uses: actions/checkout@v7  # zizmor: ignore[unpinned-uses]
         with:
           persist-credentials: false
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4  # zizmor: ignore[unpinned-uses]
+        uses: aws-actions/configure-aws-credentials@v6  # zizmor: ignore[unpinned-uses]
         with:
           role-to-assume: ${{ secrets.AWS_PLAN_ROLE_ARN }}
           aws-region: us-east-1
@@ -58,6 +58,7 @@ jobs:
       - name: tofu plan
         uses: dflook/tofu-plan@3f5dc358343fb58cd60f83b019e810315aa8258f  # v2.2.3
         env:
+          OPENTOFU_VERSION: 1.12.6
           TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

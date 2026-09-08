@@ -33,7 +33,7 @@ jobs:
           persist-credentials: false
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4  # zizmor: ignore[unpinned-uses]
+        uses: aws-actions/configure-aws-credentials@v6  # zizmor: ignore[unpinned-uses]
         with:
           role-to-assume: ${{ secrets.AWS_APPLY_ROLE_ARN }}
           aws-region: us-east-1
@@ -41,6 +41,7 @@ jobs:
       - name: tofu apply
         uses: dflook/tofu-apply@c254eb5b2e48978c05587373100d26b604c2182d # v2.2.3
         env:
+          OPENTOFU_VERSION: 1.12.6
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
         with:
